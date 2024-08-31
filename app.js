@@ -2,9 +2,13 @@ function sortear() {
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
+    let intervaloFormado = ate - de + 1;
 
     if (de >= ate) {
         alert ("O valor inserido no campo 'Do número' é maior que o valor inserido no campo 'Até o número'. Revise os valores inseridos");
+    }
+    if (quantidade > intervaloFormado) {
+        alert ("O campo 'quantidade' deve ser maior que o intervalo formado");
     } else {
         let sorteados = [];
         let numero;
@@ -28,7 +32,7 @@ function sortear() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     
     };
-
+    
 }
 
 function alterarStatusBotao () {
